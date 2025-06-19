@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+scikit-learn
+pydantic
+numpy
+pandas
+joblib
+
+# ML Stack
+scikit-learn==1.6.1
+lightgbm
+pandas
+numpy
+
