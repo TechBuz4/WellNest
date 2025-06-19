@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from pred import predict_risk  # Your own prediction function
-from epds import print_epds_results, epds_assessment, list_answers
+from epds_score import print_epds_results, epds_assessment, list_answers
 from typing import List
 
 app = FastAPI(
