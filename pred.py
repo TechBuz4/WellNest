@@ -18,7 +18,7 @@ def load_model():
         - model: trained classifier (e.g., RandomForestClassifier)
         - scaler: fitted StandardScaler
     """
-    model_path = "/content/drive/MyDrive/Colab Notebooks/AI4Good/ensemble_model.pkl"
+    model_path = "ensemble_model.pkl"
     scaler_path = "scaler.pkl"
 
     if not os.path.exists(model_path) or not os.path.exists(scaler_path):
