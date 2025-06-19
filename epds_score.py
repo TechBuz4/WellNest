@@ -1,4 +1,3 @@
-
 def list_answers(data):
     epds_score = sum(data)
     q3 = data[2]
@@ -106,9 +105,19 @@ def epds_assessment(epds_score, q3, q4, q5, q10):
             "Q10": q10
         }
     }
-    results.update(assess_harm_risk(q10))
-    results.update(assess_depression_level(epds_score))
-    results.update(assess_anxiety(q3, q4, q5))
+
+    harm = assess_harm_risk(q10)
+    if harm:
+        results.update(harm)
+
+    depression = assess_depression_level(epds_score)
+    if depression:
+        results.update(depression)
+
+    anxiety = assess_anxiety(q3, q4, q5)
+    if anxiety:
+        results.update(anxiety)
+
     return results
 
 
