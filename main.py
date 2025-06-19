@@ -36,9 +36,13 @@ class EPDSInput(BaseModel):
 @app.post("/epds")
 def epds_score(data: EPDSInput):
     try:
-        epds_score, q3, q4, q5, q10 = list_answers(data)
-        result = print_epds_results(epds_assessment(epds_score=1, q3=2, q4=1, q5=0, q10=1))
+        # Extract data from request
+        epds_score_val, q3, q4, q5, q10 = list_answers(data.responses)
+
+        # Perform full assessment
+        result = epds_assessment(epds_score_val, q3, q4, q5, q10)
+
         return result
+
     except ValueError as e:
         return {"error": str(e)}
-
