@@ -3,9 +3,18 @@ from pydantic import BaseModel
 from pred import predict_risk  # Your own prediction function
 from epds_score import print_epds_results, epds_assessment, list_answers
 from typing import List
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="Pregnancy Risk API"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Or specify your frontend domain(s)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Define the expected input features
