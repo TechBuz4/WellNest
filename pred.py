@@ -7,7 +7,7 @@ from sklearn.tree import DecisionTreeClassifier
 from lightgbm import LGBMClassifier
 import os
 
-FEATURE_ORDER = ['age', 'SystolicBP', 'DiastolicBP', 'BS', 'BodyTemp', 'HeartRate']
+FEATURE_ORDER = ['age', 'SystolicBP', 'DiastolicBP', 'HeartRate', 'BS', 'BodyTemp']
 
 import joblib
 
