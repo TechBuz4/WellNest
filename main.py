@@ -11,7 +11,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Or specify your frontend domain(s)
+    allow_origins=["https://lovable.dev"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
