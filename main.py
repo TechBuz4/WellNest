@@ -23,10 +23,10 @@ class InputData(BaseModel):
     age: int
     SystolicBP: float
     DiastolicBP: float
+    HeartRate: int
     BS: float
     BodyTemp: float
-    HeartRate: int
-
+    
 @app.get("/")
 def read_root():
     return {"message": "Welcome to the Pregnancy Risk Prediction API"}
